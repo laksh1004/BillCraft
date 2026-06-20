@@ -13,17 +13,18 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
-import com.billcraft.app.presentation.ui.business.BusinessProfileScreen
-import com.billcraft.app.presentation.ui.customer.AddCustomerScreen
-import com.billcraft.app.presentation.ui.customer.CustomerDetailScreen
-import com.billcraft.app.presentation.ui.customer.CustomerListScreen
+import com.billcraft.app.presentation.screens.onboarding.BusinessSetupScreen
+import com.billcraft.app.presentation.screens.customer.AddEditCustomerScreen
+import com.billcraft.app.presentation.screens.customer.CustomerDetailScreen
+import com.billcraft.app.presentation.screens.customer.CustomerListScreen
 import com.billcraft.app.presentation.ui.dashboard.DashboardScreen
-import com.billcraft.app.presentation.ui.invoice.CreateInvoiceScreen
+import com.billcraft.app.presentation.screens.invoice.CreateInvoiceScreen
 import com.billcraft.app.presentation.ui.invoice.InvoiceDetailScreen
 import com.billcraft.app.presentation.ui.invoice.InvoiceListScreen
-import com.billcraft.app.presentation.ui.onboarding.OnboardingScreen
-import com.billcraft.app.presentation.ui.payment.RecordPaymentScreen
-import com.billcraft.app.presentation.ui.settings.SettingsScreen
+import com.billcraft.app.presentation.screens.onboarding.WelcomeScreen
+import com.billcraft.app.presentation.screens.payment.RecordPaymentScreen
+import com.billcraft.app.presentation.screens.settings.SettingsScreen
+import com.billcraft.app.presentation.screens.payment.CheckoutSummaryScreen
 
 private data class BottomNavItem(
     val label: String,
@@ -38,7 +39,6 @@ private val bottomNavItems = listOf(
     BottomNavItem("Settings", Icons.Filled.Settings, Screen.Settings)
 )
 
-// Routes that should show the bottom navigation bar
 private val bottomNavRoutes = setOf(
     Screen.Dashboard.route,
     Screen.InvoiceList.route,
@@ -96,10 +96,14 @@ fun BillCraftNavHost(
         startDestination = Screen.Onboarding.route,
         modifier = modifier
     ) {
-        // ── Onboarding ──────────────────────────────────────────────────
         composable(Screen.Onboarding.route) {
-            OnboardingScreen(
-                onComplete = {
+            WelcomeScreen(
+                onGetStarted = {
+                    navController.navigate(Screen.Dashboard.route) {
+                        popUpTo(Screen.Onboarding.route) { inclusive = true }
+                    }
+                },
+                onContinue = {
                     navController.navigate(Screen.Dashboard.route) {
                         popUpTo(Screen.Onboarding.route) { inclusive = true }
                     }
@@ -107,7 +111,6 @@ fun BillCraftNavHost(
             )
         }
 
-        // ── Dashboard ───────────────────────────────────────────────────
         composable(Screen.Dashboard.route) {
             DashboardScreen(
                 onNavigateToInvoices = { navController.navigate(Screen.InvoiceList.route) },
@@ -118,7 +121,6 @@ fun BillCraftNavHost(
             )
         }
 
-        // ── Invoice List ────────────────────────────────────────────────
         composable(Screen.InvoiceList.route) {
             InvoiceListScreen(
                 onNavigateToCreate = { navController.navigate(Screen.CreateInvoice.route) },
@@ -128,19 +130,12 @@ fun BillCraftNavHost(
             )
         }
 
-        // ── Create Invoice ──────────────────────────────────────────────
         composable(Screen.CreateInvoice.route) {
             CreateInvoiceScreen(
-                onBack = { navController.popBackStack() },
-                onInvoiceCreated = { invoiceId ->
-                    navController.navigate(Screen.InvoiceDetail.createRoute(invoiceId)) {
-                        popUpTo(Screen.CreateInvoice.route) { inclusive = true }
-                    }
-                }
+                onNavigateBack = { navController.popBackStack() }
             )
         }
 
-        // ── Invoice Detail ──────────────────────────────────────────────
         composable(
             route = Screen.InvoiceDetail.route,
             arguments = listOf(navArgument("invoiceId") { type = NavType.StringType })
@@ -158,92 +153,66 @@ fun BillCraftNavHost(
             )
         }
 
-        // ── Edit Invoice ────────────────────────────────────────────────
         composable(
             route = Screen.EditInvoice.route,
             arguments = listOf(navArgument("invoiceId") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val invoiceId = backStackEntry.arguments?.getString("invoiceId") ?: ""
+        ) { 
             CreateInvoiceScreen(
-                invoiceId = invoiceId,
-                onBack = { navController.popBackStack() },
-                onInvoiceCreated = { navController.popBackStack() }
+                onNavigateBack = { navController.popBackStack() }
             )
         }
 
-        // ── Customer List ───────────────────────────────────────────────
         composable(Screen.CustomerList.route) {
             CustomerListScreen(
-                onNavigateToAdd = { navController.navigate(Screen.AddCustomer.route) },
-                onNavigateToDetail = { id ->
-                    navController.navigate(Screen.CustomerDetail.createRoute(id))
+                onAddCustomerClick = { navController.navigate(Screen.AddCustomer.route) },
+                onCustomerClick = { 
+                    navController.navigate(Screen.CustomerDetail.createRoute("dummy"))
                 }
             )
         }
 
-        // ── Add Customer ────────────────────────────────────────────────
         composable(Screen.AddCustomer.route) {
-            AddCustomerScreen(
-                onBack = { navController.popBackStack() },
-                onCustomerSaved = { navController.popBackStack() }
+            AddEditCustomerScreen(
+                onSaveClick = { navController.popBackStack() }
             )
         }
 
-        // ── Customer Detail ─────────────────────────────────────────────
         composable(
             route = Screen.CustomerDetail.route,
             arguments = listOf(navArgument("customerId") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val customerId = backStackEntry.arguments?.getString("customerId") ?: ""
+        ) { 
             CustomerDetailScreen(
-                customerId = customerId,
-                onBack = { navController.popBackStack() },
-                onNavigateToInvoice = { id ->
-                    navController.navigate(Screen.InvoiceDetail.createRoute(id))
-                }
+                onNavigateBack = { navController.popBackStack() }
             )
         }
 
-        // ── Record Payment ──────────────────────────────────────────────
         composable(
             route = Screen.RecordPayment.route,
             arguments = listOf(navArgument("invoiceId") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val invoiceId = backStackEntry.arguments?.getString("invoiceId") ?: ""
+        ) { 
             RecordPaymentScreen(
-                invoiceId = invoiceId,
-                onBack = { navController.popBackStack() },
-                onPaymentRecorded = { navController.popBackStack() }
+                onRecordPayment = { navController.popBackStack() }
             )
         }
 
-        // ── Settings ────────────────────────────────────────────────────
         composable(Screen.Settings.route) {
-            SettingsScreen(
-                onNavigateToBusinessProfile = {
-                    navController.navigate(Screen.BusinessProfile.route)
-                }
-            )
+            SettingsScreen()
         }
 
-        // ── Business Profile ────────────────────────────────────────────
         composable(Screen.BusinessProfile.route) {
-            BusinessProfileScreen(
-                onBack = { navController.popBackStack() }
+            BusinessSetupScreen(
+                onSaveClick = { navController.popBackStack() }
             )
         }
 
-        // ── Checkout Summary ────────────────────────────────────────────
         composable(
             route = Screen.CheckoutSummary.route,
             arguments = listOf(navArgument("invoiceId") { type = NavType.StringType })
         ) { backStackEntry ->
             val invoiceId = backStackEntry.arguments?.getString("invoiceId") ?: ""
-            InvoiceDetailScreen(
+            CheckoutSummaryScreen(
                 invoiceId = invoiceId,
-                onBack = { navController.popBackStack() },
-                onNavigateToEdit = {},
-                onNavigateToPayment = {}
+                navController = navController
             )
         }
     }

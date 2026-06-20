@@ -50,7 +50,7 @@ fun CheckoutSummaryScreen(
     val dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
 
     // ── Observe state ────────────────────────────────────────────────────────
-    val invoice by invoiceViewModel.currentInvoice.collectAsState()
+    val invoice by invoiceViewModel.selectedInvoice.collectAsState()
     val totalPaid by viewModel.totalPaid.collectAsState()
     val balanceDue by viewModel.balanceDue.collectAsState()
 
