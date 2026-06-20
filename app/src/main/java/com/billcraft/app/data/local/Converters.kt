@@ -19,9 +19,4 @@ class Converters {
         }
     }
 
-    @TypeConverter
-    fun fromEpochMilli(value: Long?): Long? = value
-
-    @TypeConverter
-    fun toEpochMilli(value: Long?): Long? = value
 }

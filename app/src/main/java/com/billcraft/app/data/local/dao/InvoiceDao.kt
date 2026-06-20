@@ -56,6 +56,6 @@ interface InvoiceDao {
     @Query("SELECT COUNT(*) FROM invoices")
     suspend fun count(): Int
 
-    @Query("SELECT MAX(CAST(SUBSTR(invoiceNumber, INSTR(invoiceNumber, '-', INSTR(invoiceNumber, '-') + 1) + 1) AS INTEGER)) FROM invoices WHERE invoiceNumber LIKE :prefix || '%'")
+    @Query("SELECT MAX(CAST(SUBSTR(invoiceNumber, LENGTH(:prefix) + 1) AS INTEGER)) FROM invoices WHERE invoiceNumber LIKE :prefix || '%'")
     suspend fun getLastInvoiceNumber(prefix: String): Int?
 }
