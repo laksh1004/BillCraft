@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- APP                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="app_name">BillCraft</string>
+    <string name="app_tagline">Smart Billing for Bharat 🇮🇳</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- NAVIGATION                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_invoices">Invoices</string>
+    <string name="nav_customers">Customers</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- DASHBOARD                                                   -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="dashboard_greeting">Hello, %1$s 👋</string>
+    <string name="dashboard_total_revenue">Total Revenue</string>
+    <string name="dashboard_pending">Pending</string>
+    <string name="dashboard_overdue">Overdue</string>
+    <string name="dashboard_quick_actions">Quick Actions</string>
+    <string name="dashboard_recent_invoices">Recent Invoices</string>
+    <string name="dashboard_new_invoice">New Invoice</string>
+    <string name="dashboard_new_estimate">New Estimate</string>
+    <string name="dashboard_new_receipt">New Receipt</string>
+    <string name="dashboard_new_customer">New Customer</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- INVOICE                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="invoice_list_title">Invoices</string>
+    <string name="invoice_create_title">New Invoice</string>
+    <string name="invoice_detail_title">Invoice Details</string>
+    <string name="invoice_number">Invoice No.</string>
+    <string name="invoice_date">Invoice Date</string>
+    <string name="invoice_due_date">Due Date</string>
+    <string name="invoice_type_invoice">Invoice</string>
+    <string name="invoice_type_estimate">Estimate</string>
+    <string name="invoice_type_receipt">Receipt</string>
+
+    <!-- Invoice status labels -->
+    <string name="invoice_status_draft">Draft</string>
+    <string name="invoice_status_sent">Sent</string>
+    <string name="invoice_status_paid">Paid</string>
+    <string name="invoice_status_partial">Partial</string>
+    <string name="invoice_status_overdue">Overdue</string>
+    <string name="invoice_status_cancelled">Cancelled</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- LINE ITEMS                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="line_item_description">Description</string>
+    <string name="line_item_hsn">HSN / SAC Code</string>
+    <string name="line_item_quantity">Qty</string>
+    <string name="line_item_unit">Unit</string>
+    <string name="line_item_price">Rate (₹)</string>
+    <string name="line_item_discount">Discount (%)</string>
+    <string name="line_item_gst_rate">GST Rate (%)</string>
+    <string name="line_item_amount">Amount (₹)</string>
+    <string name="add_line_item">+ Add Item</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- GST                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="gstin_label">GSTIN</string>
+    <string name="gstin_hint">e.g. 22AAAAA0000A1Z5</string>
+    <string name="gstin_valid">✓ Valid GSTIN</string>
+    <string name="gstin_invalid">✗ Invalid GSTIN</string>
+    <string name="cgst_label">CGST</string>
+    <string name="sgst_label">SGST</string>
+    <string name="igst_label">IGST</string>
+    <string name="gst_summary">GST Summary</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="tax_invoice_label">TAX INVOICE</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- CUSTOMER                                                    -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="customer_list_title">Customers</string>
+    <string name="customer_add_title">Add Customer</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_phone">Phone Number</string>
+    <string name="customer_email">Email Address</string>
+    <string name="customer_address">Address</string>
+    <string name="customer_city">City</string>
+    <string name="customer_state">State</string>
+    <string name="customer_pincode">PIN Code</string>
+    <string name="customer_gstin">Customer GSTIN</string>
+    <string name="customer_balance">Outstanding Balance</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- PAYMENT                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="payment_mode_cash">Cash</string>
+    <string name="payment_mode_upi">UPI</string>
+    <string name="payment_mode_bank">Bank Transfer</string>
+    <string name="payment_mode_cheque">Cheque</string>
+    <string name="payment_mode_card">Card</string>
+    <string name="record_payment">Record Payment</string>
+    <string name="payment_amount">Amount Received (₹)</string>
+    <string name="payment_date">Payment Date</string>
+    <string name="payment_notes">Notes (optional)</string>
+    <string name="upi_transaction_id">UPI Transaction ID</string>
+    <string name="cheque_number">Cheque Number</string>
+    <string name="balance_due">Balance Due</string>
+    <string name="amount_paid">Amount Paid</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- UPI / QR                                                    -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="upi_qr_title">Pay via UPI</string>
+    <string name="upi_id_label">UPI ID</string>
+    <string name="scan_to_pay">Scan to Pay ₹%1$s</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- SETTINGS                                                    -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_business_profile">Business Profile</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_backup">Backup &amp; Restore</string>
+    <string name="settings_rate_app">Rate BillCraft ⭐</string>
+    <string name="settings_share_app">Share BillCraft</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- SHARING                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="share_invoice">Share Invoice</string>
+    <string name="share_via_whatsapp">Share via WhatsApp</string>
+    <string name="share_via_email">Share via Email</string>
+    <string name="share_as_pdf">Share as PDF</string>
+    <string name="download_pdf">Download PDF</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- ERRORS                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="error_gstin_invalid">Please enter a valid 15-character GSTIN</string>
+    <string name="error_required_field">This field is required</string>
+    <string name="error_invalid_amount">Please enter a valid amount</string>
+    <string name="error_no_line_items">Please add at least one item to the invoice</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- EMPTY STATES                                                -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="empty_invoices">No invoices yet.\nTap the + button to create your first invoice.</string>
+    <string name="empty_customers">No customers yet.\nAdd a customer to get started.</string>
+    <string name="empty_payments">No payments recorded yet.</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- ONBOARDING                                                  -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="onboarding_welcome_title">Welcome to BillCraft</string>
+    <string name="onboarding_welcome_subtitle">Smart Billing for Bharat 🇮🇳</string>
+    <string name="onboarding_get_started">Get Started</string>
+    <string name="onboarding_feature_gst">📄 GST-Ready Invoices</string>
+    <string name="onboarding_feature_share">📲 Share via WhatsApp &amp; Email</string>
+    <string name="onboarding_feature_payment">💳 Track Payments &amp; UPI QR</string>
+    <string name="onboarding_already_setup">Already set up? Continue →</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- BUSINESS PROFILE                                            -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="business_name">Business Name</string>
+    <string name="business_gstin">Business GSTIN</string>
+    <string name="business_address">Business Address</string>
+    <string name="business_bank_details">Bank Details</string>
+    <string name="business_upi_id">UPI ID</string>
+    <string name="business_ifsc">IFSC Code</string>
+    <string name="business_account_number">Account Number</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- TDS                                                         -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="tds_label">TDS</string>
+    <string name="tds_section">TDS Section</string>
+    <string name="tds_rate">TDS Rate (%)</string>
+    <string name="tds_amount">TDS Amount</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- AMOUNT IN WORDS                                             -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="rupees_only">Rupees %1$s Only</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- BUTTONS                                                     -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_continue">Continue</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_save_draft">Save as Draft</string>
+    <string name="btn_preview">Preview</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_add">Add</string>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- ALL 36 INDIAN STATES + UNION TERRITORIES                   -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <string-array name="indian_states">
+        <item>Andaman and Nicobar Islands</item>
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chandigarh</item>
+        <item>Chhattisgarh</item>
+        <item>Dadra and Nagar Haveli and Daman and Diu</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Ladakh</item>
+        <item>Lakshadweep</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Puducherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
+
+</resources>

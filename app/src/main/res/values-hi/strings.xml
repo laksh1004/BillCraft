@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Hindi (hi) string translations for BillCraft.
+    Covers 30+ key UI strings. Add more as the app grows.
+-->
+<resources>
+
+    <!-- App -->
+    <string name="app_name">बिलक्राफ्ट</string>
+    <string name="app_tagline">भारत के लिए स्मार्ट बिलिंग 🇮🇳</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">डैशबोर्ड</string>
+    <string name="nav_invoices">चालान</string>
+    <string name="nav_customers">ग्राहक</string>
+    <string name="nav_settings">सेटिंग्स</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting">नमस्ते, %1$s 👋</string>
+    <string name="dashboard_total_revenue">कुल राजस्व</string>
+    <string name="dashboard_pending">बकाया</string>
+    <string name="dashboard_overdue">अतिदेय</string>
+    <string name="dashboard_quick_actions">त्वरित कार्य</string>
+    <string name="dashboard_recent_invoices">हाल के चालान</string>
+    <string name="dashboard_new_invoice">नया चालान</string>
+    <string name="dashboard_new_estimate">नया अनुमान</string>
+    <string name="dashboard_new_receipt">नई रसीद</string>
+    <string name="dashboard_new_customer">नया ग्राहक</string>
+
+    <!-- Invoice -->
+    <string name="invoice_list_title">चालान सूची</string>
+    <string name="invoice_create_title">नया चालान बनाएँ</string>
+    <string name="invoice_detail_title">चालान विवरण</string>
+    <string name="invoice_number">चालान नं.</string>
+    <string name="invoice_date">चालान दिनांक</string>
+    <string name="invoice_due_date">देय तिथि</string>
+
+    <!-- Invoice status -->
+    <string name="invoice_status_draft">मसौदा</string>
+    <string name="invoice_status_sent">भेजा गया</string>
+    <string name="invoice_status_paid">भुगतान हो गया</string>
+    <string name="invoice_status_partial">आंशिक भुगतान</string>
+    <string name="invoice_status_overdue">अतिदेय</string>
+    <string name="invoice_status_cancelled">रद्द</string>
+
+    <!-- GST -->
+    <string name="gstin_label">जीएसटीआईएन</string>
+    <string name="gstin_hint">उदा. 22AAAAA0000A1Z5</string>
+    <string name="gstin_valid">✓ मान्य जीएसटीआईएन</string>
+    <string name="gstin_invalid">✗ अमान्य जीएसटीआईएन</string>
+    <string name="grand_total">कुल राशि</string>
+    <string name="subtotal">उप-योग</string>
+
+    <!-- Customer -->
+    <string name="customer_name">ग्राहक का नाम</string>
+    <string name="customer_phone">फ़ोन नंबर</string>
+    <string name="customer_address">पता</string>
+
+    <!-- Payment -->
+    <string name="payment_mode_cash">नकद</string>
+    <string name="payment_mode_upi">यूपीआई</string>
+    <string name="payment_mode_bank">बैंक ट्रांसफर</string>
+    <string name="payment_mode_cheque">चेक</string>
+    <string name="payment_mode_card">कार्ड</string>
+    <string name="record_payment">भुगतान दर्ज करें</string>
+    <string name="balance_due">बकाया राशि</string>
+    <string name="amount_paid">भुगतान की गई राशि</string>
+
+    <!-- UPI / QR -->
+    <string name="upi_qr_title">यूपीआई से भुगतान करें</string>
+    <string name="scan_to_pay">₹%1$s चुकाने के लिए स्कैन करें</string>
+
+    <!-- Sharing -->
+    <string name="share_invoice">चालान साझा करें</string>
+    <string name="share_via_whatsapp">व्हाट्सएप से साझा करें</string>
+    <string name="share_via_email">ईमेल से साझा करें</string>
+    <string name="share_as_pdf">PDF के रूप में साझा करें</string>
+    <string name="download_pdf">PDF डाउनलोड करें</string>
+
+    <!-- Settings -->
+    <string name="settings_title">सेटिंग्स</string>
+    <string name="settings_business_profile">व्यवसाय प्रोफ़ाइल</string>
+    <string name="settings_rate_app">BillCraft को रेट करें ⭐</string>
+
+    <!-- Errors -->
+    <string name="error_gstin_invalid">कृपया 15 अक्षरों का मान्य GSTIN दर्ज करें</string>
+    <string name="error_required_field">यह फ़ील्ड आवश्यक है</string>
+    <string name="error_invalid_amount">कृपया मान्य राशि दर्ज करें</string>
+    <string name="error_no_line_items">कृपया चालान में कम से कम एक आइटम जोड़ें</string>
+
+    <!-- Empty states -->
+    <string name="empty_invoices">अभी तक कोई चालान नहीं।\nपहला चालान बनाने के लिए + दबाएँ।</string>
+    <string name="empty_customers">अभी तक कोई ग्राहक नहीं।\nग्राहक जोड़ें और शुरुआत करें।</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">BillCraft में आपका स्वागत है</string>
+    <string name="onboarding_welcome_subtitle">भारत के लिए स्मार्ट बिलिंग 🇮🇳</string>
+    <string name="onboarding_get_started">शुरू करें</string>
+    <string name="onboarding_already_setup">पहले से सेटअप किया है? जारी रखें →</string>
+
+    <!-- Buttons -->
+    <string name="btn_save">सहेजें</string>
+    <string name="btn_cancel">रद्द करें</string>
+    <string name="btn_delete">हटाएँ</string>
+    <string name="btn_edit">संपादित करें</string>
+    <string name="btn_continue">जारी रखें</string>
+    <string name="btn_skip">छोड़ें</string>
+    <string name="btn_preview">पूर्वावलोकन</string>
+    <string name="btn_share">साझा करें</string>
+    <string name="btn_add">जोड़ें</string>
+
+    <!-- Amount in words -->
+    <string name="rupees_only">%1$s रुपये मात्र</string>
+
+    <!-- TDS -->
+    <string name="tds_label">टीडीएस</string>
+    <string name="tds_section">टीडीएस धारा</string>
+    <string name="tds_rate">टीडीएस दर (%)</string>
+    <string name="tds_amount">टीडीएस राशि</string>
+
+    <!-- Business -->
+    <string name="business_name">व्यवसाय का नाम</string>
+    <string name="business_gstin">व्यवसाय GSTIN</string>
+    <string name="business_upi_id">यूपीआई आईडी</string>
+
+</resources>

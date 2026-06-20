@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <!--
+        Base config: enforce TLS for all traffic by default.
+        Cleartext (plain HTTP) is blocked everywhere except the
+        explicit AdMob / DoubleClick domains listed below.
+    -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!--
+        AdMob / Google Ads SDK requires cleartext for some of its ad-serving
+        and measurement endpoints. These domains are explicitly allow-listed.
+        See: https://developers.google.com/admob/android/network-security
+    -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Primary DoubleClick ad server -->
+        <domain includeSubdomains="true">googleads.g.doubleclick.net</domain>
+
+        <!-- Publisher ad server -->
+        <domain includeSubdomains="true">pubads.g.doubleclick.net</domain>
+
+        <!-- Google Syndication (display / native ads) -->
+        <domain includeSubdomains="true">pagead2.googlesyndication.com</domain>
+
+        <!-- AdMob measurement & reporting -->
+        <domain includeSubdomains="true">adservice.google.com</domain>
+
+        <!-- AdMob mediation networks (add more as needed) -->
+        <domain includeSubdomains="true">admob.googleapis.com</domain>
+    </domain-config>
+
+</network-security-config>
