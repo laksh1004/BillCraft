@@ -96,6 +96,10 @@ class InvoiceRepositoryImpl @Inject constructor(
         return "$prefix-${String.format("%03d", lastNumber + 1)}"
     }
 
+    override suspend fun getLastSequenceForPrefix(prefix: String): Int? {
+        return invoiceDao.getLastInvoiceNumber(prefix)
+    }
+
     // ---- Helper to enrich an InvoiceEntity with customer, business, lineItems ----
 
     private suspend fun enrichInvoice(entity: InvoiceEntity): Invoice {
